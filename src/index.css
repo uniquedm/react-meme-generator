@@ -70,3 +70,9 @@ body {
   justify-content: center;
   padding: 25px;
 }
+
+.image--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
