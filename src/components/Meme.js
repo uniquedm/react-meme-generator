@@ -9,7 +9,7 @@ export default function Meme() {
                     <input type="text" className="form--input" placeholder="Bottom Text"></input>
                 </div>
                 <div className="input--button">
-                    <input type="submit" className="form--submit" value="Get a new meme image 🖼"></input>
+                    <button className="form--submit">Get a new meme image 🖼</button>
                 </div>
             </form>
         </div>
