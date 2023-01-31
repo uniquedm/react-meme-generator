@@ -2,12 +2,12 @@ import React from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-    let [url, changeUrl] = React.useState("")
+    let [memeImage, changeMemeImage] = React.useState("")
 
-    function handleClick() {
+    function getMemeImage() {
         const memes = memesData.data.memes
-        const randomUrl = memes[Math.floor(Math.random()*memes.length)].url;
-        changeUrl(randomUrl)
+        const randomMeme = memes[Math.floor(Math.random()*memes.length)].url;
+        changeMemeImage(randomMeme)
     }
 
     return (
@@ -18,11 +18,11 @@ export default function Meme() {
                     <input type="text" className="form--input" placeholder="Bottom Text"></input>
                 </div>
                 <div className="input--button">
-                    <button onClick={handleClick} className="form--submit">Get a new meme image 🖼</button>
+                    <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
                 </div>
             </div>
             <div className="image--container">
-            <img src={url} alt="meme" className="meme--image"/>
+            {memeImage && <img src={memeImage} alt="meme" className="meme--image"/>}
             </div>
         </div>
     )
