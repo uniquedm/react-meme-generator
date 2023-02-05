@@ -2,7 +2,7 @@ import React from "react";
 import memesData from "../memesData";
 
 export default function Meme() {
-    let [meme, updateMeme] = React.useState({topText: "", bottomText: "", randomImage: null})
+    let [meme, updateMeme] = React.useState({topText: null, bottomText: null, randomImage: null})
     let [allMemeImages, updateImages] = React.useState(memesData.data.memes)
 
     function getMemeImage() {
@@ -26,7 +26,9 @@ export default function Meme() {
                 </div>
             </div>
             <div className="image--container">
+                {meme.topText  && <p className="image--text--top">{meme.topText}</p>}
                 {meme.randomImage && <img src={meme.randomImage} alt="meme" className="meme--image"/>}
+                {meme.bottomText  && <p className="image--text--bottom">{meme.bottomText}</p>}
             </div>
         </div>
     )

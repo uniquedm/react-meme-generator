@@ -72,7 +72,26 @@ body {
 }
 
 .image--container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.image--text--top {
+  position: absolute;
+  font-size: 60px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  top: 0;
+}
+
+.image--text--bottom {
+  position: absolute;
+  font-size: 60px;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  bottom: 0;
 }
