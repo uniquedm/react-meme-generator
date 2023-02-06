@@ -14,12 +14,25 @@ export default function Meme() {
         })
     }
 
+    function changeMemeTopText(e) {
+        updateMeme(prevMeme => {
+            return {...prevMeme, topText: e.target.value}
+        })
+    }
+
+    function changeMemeBottomText(e) {
+        updateMeme(prevMeme => {
+            return {...prevMeme, bottomText: e.target.value}
+        })
+    }
+
+
     return (
         <div>
             <div>
                 <div className="input--fields">
-                    <input type="text" className="form--input" placeholder="Top Text"></input>
-                    <input type="text" className="form--input" placeholder="Bottom Text"></input>
+                    <input type="text" onInput={changeMemeTopText} className="form--input" placeholder="Top Text"></input>
+                    <input type="text" onInput={changeMemeBottomText} className="form--input" placeholder="Bottom Text"></input>
                 </div>
                 <div className="input--button">
                     <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
