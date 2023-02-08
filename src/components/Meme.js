@@ -6,9 +6,12 @@ export default function Meme() {
     let [allMemeImages, updateImages] = React.useState(memesData.data.memes)
 
     function getMemeImage() {
-        console.log(allMemeImages)
+        fetch('https://api.imgflip.com/get_memes')
+        .then(response => response.json())
+        .then(memes => updateImages(prevImages => memes.data.memes));
+
         const image = allMemeImages[Math.floor(Math.random()*allMemeImages.length)].url;
-        console.log(image)
+        
         updateMeme(prevMem => {
             return {...prevMem, randomImage: image};
         })
