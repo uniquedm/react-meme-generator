@@ -8,7 +8,7 @@ export default function Meme() {
     function getMemeImage() {
         fetch('https://api.imgflip.com/get_memes')
         .then(response => response.json())
-        .then(memes => updateImages(prevImages => memes.data.memes));
+        .then(memes => updateImages(memes.data.memes));
 
         const image = allMemeImages[Math.floor(Math.random()*allMemeImages.length)].url;
         
@@ -17,15 +17,9 @@ export default function Meme() {
         })
     }
 
-    function changeMemeTopText(e) {
+    function changeText(event) {
         updateMeme(prevMeme => {
-            return {...prevMeme, topText: e.target.value}
-        })
-    }
-
-    function changeMemeBottomText(e) {
-        updateMeme(prevMeme => {
-            return {...prevMeme, bottomText: e.target.value}
+            return {...prevMeme, [event.target.name]: event.target.value}
         })
     }
 
@@ -34,8 +28,8 @@ export default function Meme() {
         <div>
             <div>
                 <div className="input--fields">
-                    <input type="text" onInput={changeMemeTopText} className="form--input" placeholder="Top Text"></input>
-                    <input type="text" onInput={changeMemeBottomText} className="form--input" placeholder="Bottom Text"></input>
+                    <input type="text" onChange={changeText} name="topText" className="form--input" placeholder="Top Text"></input>
+                    <input type="text" onChange={changeText} name="bottomText" className="form--input" placeholder="Bottom Text"></input>
                 </div>
                 <div className="input--button">
                     <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
