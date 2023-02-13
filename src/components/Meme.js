@@ -28,8 +28,8 @@ export default function Meme() {
         <div>
             <div>
                 <div className="input--fields">
-                    <input type="text" onChange={changeText} name="topText" className="form--input" placeholder="Top Text"></input>
-                    <input type="text" onChange={changeText} name="bottomText" className="form--input" placeholder="Bottom Text"></input>
+                    <input type="text" onChange={changeText} value={meme.topText} name="topText" className="form--input" placeholder="Top Text"></input>
+                    <input type="text" onChange={changeText} value={meme.bottomText} name="bottomText" className="form--input" placeholder="Bottom Text"></input>
                 </div>
                 <div className="input--button">
                     <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
