@@ -28,18 +28,23 @@ export default function Meme() {
         <div>
             <div>
                 <div className="input--fields">
-                    <input type="text" onChange={changeText} value={meme.topText} name="topText" className="form--input" placeholder="Top Text"></input>
-                    <input type="text" onChange={changeText} value={meme.bottomText} name="bottomText" className="form--input" placeholder="Bottom Text"></input>
+                    
+                        <input id="top-input" type="text" onChange={changeText} value={meme.topText} name="topText" className="form--input" placeholder="Top Text"></input>
+                        <input type="text" onChange={changeText} value={meme.bottomText} name="bottomText" className="form--input" placeholder="Bottom Text"></input>
+                   
                 </div>
                 <div className="input--button">
                     <button onClick={getMemeImage} className="form--submit">Get a new meme image 🖼</button>
                 </div>
             </div>
-            <div className="image--container">
-                {meme.topText  && <p className="image--text--top">{meme.topText}</p>}
-                {meme.randomImage && <img src={meme.randomImage} alt="meme" className="meme--image"/>}
-                {meme.bottomText  && <p className="image--text--bottom">{meme.bottomText}</p>}
-            </div>
+            {meme.randomImage && <div className="image--container">
+                <fieldset className="field--set">
+                <legend>Meme</legend>
+                    {meme.topText  && <p className="image--text--top">{meme.topText}</p>}
+                    {meme.randomImage && <img src={meme.randomImage} alt="meme" className="meme--image"/>}
+                    {meme.bottomText  && <p className="image--text--bottom">{meme.bottomText}</p>}
+                </fieldset>
+            </div>}
         </div>
     )
 }
