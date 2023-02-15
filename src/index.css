@@ -3,10 +3,6 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
-.App {
-
-}
-
 .app-header {
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   color: white;
@@ -78,22 +74,38 @@ body {
   align-items: center;
 }
 
-.image--text--top {
+.meme--text {
   position: absolute;
-  font-size: 60px;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  top: 0;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
 }
 
-.image--text--bottom {
-  position: absolute;
-  font-size: 60px;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  bottom: 0;
+.bottom {
+  bottom: 10%;
 }
 
+.top {
+  top: 10%;
+}
 
 .field--set {
   display: flex;

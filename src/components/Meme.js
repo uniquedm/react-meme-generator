@@ -40,9 +40,9 @@ export default function Meme() {
             {meme.randomImage && <div className="image--container">
                 <fieldset className="field--set">
                 <legend>Meme</legend>
-                    {meme.topText  && <p className="image--text--top">{meme.topText}</p>}
+                    {meme.topText  && <p className="meme--text top">{meme.topText}</p>}
                     {meme.randomImage && <img src={meme.randomImage} alt="meme" className="meme--image"/>}
-                    {meme.bottomText  && <p className="image--text--bottom">{meme.bottomText}</p>}
+                    {meme.bottomText  && <p className="meme--text bottom">{meme.bottomText}</p>}
                 </fieldset>
             </div>}
         </div>
