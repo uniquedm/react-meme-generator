@@ -18,8 +18,9 @@ export default function Meme() {
     }
 
     function changeText(event) {
+        const {name, value} = event.target
         updateMeme(prevMeme => {
-            return {...prevMeme, [event.target.name]: event.target.value}
+            return {...prevMeme, [name]: value}
         })
     }
 
