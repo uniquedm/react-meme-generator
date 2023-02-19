@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import memesData from "../memesData";
 
 export default function Meme() {
     let [meme, updateMeme] = React.useState({topText: "", bottomText: "", randomImage: ""})
-    let [allMemeImages, updateImages] = React.useState(memesData.data.memes)
+    let [allMemeImages, updateImages] = React.useState([])
 
     React.useEffect(()=> {
         fetch('https://api.imgflip.com/get_memes')
