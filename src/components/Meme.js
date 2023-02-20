@@ -5,9 +5,15 @@ export default function Meme() {
     let [allMemeImages, updateImages] = React.useState([])
 
     React.useEffect(()=> {
-        fetch('https://api.imgflip.com/get_memes')
-    .then(response => response.json())
-    .then(memes => updateImages(memes.data.memes))
+    //     fetch('https://api.imgflip.com/get_memes')
+    // .then(response => response.json())
+    // .then(memes => updateImages(memes.data.memes))
+    async function getMemes() {
+        const res = await fetch('https://api.imgflip.com/get_memes')
+        const memes = await res.json()
+        updateImages(memes.data.memes)
+    }
+    getMemes()
     console.log("Fetched New Images!");
     }, [])
 
